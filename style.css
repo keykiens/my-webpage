@@ -1,0 +1,68 @@
+/* 1. Универсальный селектор */
+* {
+  font-family: Arial, sans-serif;
+}
+
+/* 2. Селекторы по тегу */
+h1 {
+  color:red;
+}
+p {
+  font-size: 16px;
+}
+
+/* 3. Селекторы по классу */
+.link {
+  color: green;
+}
+.special-link {
+  color: blue;
+}
+
+/* 4. Селекторы по идентификатору */
+#first-post p {
+  color: orange;
+}
+
+/* 5. Атрибутные селекторы */
+input[placeholder="Белый"] {
+  background-color: white;
+  color: black;
+}
+
+/* 6. Псевдоклассы и псевдоэлементы */
+.nav-list li:nth-child(3) a:hover {
+  color: gold;
+}
+.color-list li.highlighted::before {
+  content: "★ ";
+  color: black;
+}
+
+/* 7. Селекторы потомков */
+.color-list li:nth-child(1) {
+  color: gray;
+}
+.color-list li:nth-child(2) {
+  color: brown;
+}
+
+/* 8. Селекторы соседей */
+h2 + p {
+  color: purple;
+}
+
+/* Дополнительно: другие элементы */
+.sidebar .widget h3 {
+  color: pink;
+}
+.sidebar .important-widget h3 {
+  color: maroon;
+}
+.sidebar .important-widget .note {
+  color: maroon;
+}
+.submit-btn {
+  background-color: black;
+  color: white;
+}
