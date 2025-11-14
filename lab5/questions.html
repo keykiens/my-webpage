@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ответы на контрольные вопросы по Flexbox и CSS</title>
+</head>
+<body>
+    <h1>Ответы на контрольные вопросы по Flexbox и CSS</h1>
+    <hr>
+
+    <h2>1. Какие значения может принимать свойство position и как они влияют на положение элемента?</h2>
+    
+    <dl>
+        <dt><strong>static</strong> (По умолчанию)</dt>
+        <dd>Элемент следует обычному потоку документа. Свойства <code>top</code>, <code>right</code>, <code>bottom</code>, <code>left</code> на него не действуют.</dd>
+        
+        <dt><strong>relative</strong></dt>
+        <dd>Элемент позиционируется относительно своего нормального положения в потоке. Свойства <code>top</code>, <code>right</code>, <code>bottom</code>, <code>left</code> сдвигают его от этого места, не влияя на положение других элементов.</dd>
+        
+        <dt><strong>absolute</strong></dt>
+        <dd>Элемент "вырывается" из обычного потока. Он позиционируется относительно ближайшего <strong>позиционированного</strong> (не <code>static</code>) родителя. Если такого родителя нет, он позиционируется относительно <code>&lt;body&gt;</code> (или <code>&lt;html&gt;</code>).</dd>
+        
+        <dt><strong>fixed</strong></dt>
+        <dd>Элемент "вырывается" из потока и позиционируется относительно окна браузера (viewport). Он остается на месте даже при прокрутке страницы.</dd>
+        
+        <dt><strong>sticky</strong></dt>
+        <dd>Гибрид <code>relative</code> и <code>fixed</code>. Элемент ведет себя как <code>relative</code>, пока не достигнет определенной точки при прокрутке (заданной <code>top</code>, <code>bottom</code> и т.д.), после чего он "прилипает" к экрану, как <code>fixed</code>.</dd>
+    </dl>
+    
+    <hr>
+    
+    <h2>2. В чем разница между display: block, display: inline, display: inline-block и display: none?</h2>
+    
+    <ul>
+        <li><strong><code>display: block</code>:</strong> Элемент занимает всю доступную ширину и всегда начинается с новой строки (например, <code>&lt;div&gt;</code>, <code>&lt;p&gt;</code>). Ему можно задавать <code>width</code>, <code>height</code>, <code>margin</code> и <code>padding</code>.</li>
+        
+        <li><strong><code>display: inline</code>:</strong> Элемент занимает только необходимое ему пространство и не начинается с новой строки (например, <code>&lt;span&gt;</code>, <code>&lt;a&gt;</code>). Ему нельзя задать <code>width</code> и <code>height</code>, а вертикальные <code>margin</code> и <code>padding</code> не будут влиять на окружающие элементы.</li>
+        
+        <li><strong><code>display: inline-block</code>:</strong> Сочетает свойства обоих. Элемент ведет себя как <code>inline</code> (выстраивается в строку с другими), но ему можно задавать <code>width</code>, <code>height</code>, <code>margin</code> и <code>padding</code>, как <code>block</code>.</li>
+        
+        <li><strong><code>display: none</code>:</strong> Элемент полностью удаляется со страницы. Он не только не виден, но и не занимает места.</li>
+    </ul>
+    
+    <hr>
+    
+    <h2>3. Опишите блочную модель CSS. Какие основные свойства влияют на размер и расположение?</h2>
+    
+    <p>Блочная модель CSS (Box Model) описывает, как элементы представлены в виде прямоугольных "коробок". Она состоит из четырех компонентов, идущих изнутри наружу:</p>
+    
+    <ol>
+        <li><strong>Content (Содержимое):</strong> Область, где отображается текст или изображения. Ее размеры задаются <strong><code>width</code></strong> и <strong><code>height</code></strong>.</li>
+        <li><strong>Padding (Внутренний отступ):</strong> Прозрачное пространство внутри рамки, между содержимым и рамкой.</li>
+        <li><strong>Border (Рамка):</strong> Линия, окружающая <code>padding</code> и <code>content</code>.</li>
+        <li><strong>Margin (Внешний отступ):</strong> Прозрачное пространство снаружи рамки, отодвигающее элемент от других элементов.</li>
+    </ol>
+    
+    <p>По умолчанию (при <code>box-sizing: content-box</code>), фактическая ширина элемента на экране = <code>width</code> + <code>padding-left</code> + <code>padding-right</code> + <code>border-left</code> + <code>border-right</code>.</p>
+
+    <hr>
+
+    <h2>4. Как работает свойство flex-direction в контейнере с display: flex?</h2>
+
+    <p>Свойство <code>flex-direction</code> определяет главную ось flex-контейнера, то есть направление, в котором будут выстраиваться дочерние элементы.</p>
+
+    <ul>
+        <li><strong><code>row</code></strong> (по умолчанию): Главная ось горизонтальная, слева направо.</li>
+        <li><strong><code>row-reverse</code>:</strong> Главная ось горизонтальная, справа налево.</li>
+        <li><strong><code>column</code>:</strong> Главная ось вертикальная, сверху вниз.</li>
+        <li><strong><code>column-reverse</code>:</strong> Главная ось вертикальная, снизу вверх.</li>
+    </ul>
+
+    <hr>
+
+    <h2>5. Как с помощью align-items и justify-content управлять расположением элементов?</h2>
+
+    <dl>
+        <dt><strong>justify-content</strong> (Выравнивание по Главной оси)</dt>
+        <dd>Управляет выравниванием элементов вдоль главной оси (направление которой задает <code>flex-direction</code>).</dd>
+        <ul>
+            <li><code>flex-start</code>: Прижимает элементы к началу оси.</li>
+            <li><code>center</code>: Группирует элементы в центре оси.</li>
+            <li><code>space-between</code>: Равномерно распределяет элементы, при этом первый и последний прижаты к краям.</li>
+            <li><code>space-evenly</code>: Равномерно распределяет элементы, при этом пространство между ними и по краям одинаковое.</li>
+        </ul>
+        
+        <dt><strong>align-items</strong> (Выравнивание по Поперечной оси)</dt>
+        <dd>Управляет выравниванием элементов вдоль поперечной оси (перпендикулярной главной оси).</dd>
+        <ul>
+            <li><code>stretch</code> (по умолчанию): Растягивает элементы на всю доступную высоту/ширину контейнера.</li>
+            <li><code>flex-start</code>: Прижимает элементы к началу поперечной оси.</li>
+            <li><code>center</code>: Выравнивает элементы по центру поперечной оси.</li>
+            <li><code>baseline</code>: Выравнивает элементы по их базовой линии (линии текста).</li>
+        </ul>
+    </dl>
+    
+    <hr>
+
+    <h2>6. Найдете в сети красивое применение flexbox.</h2>
+    
+    <p>Классическими примерами применения Flexbox, которые используются повсеместно, являются:</p>
+    <ul>
+        <li><strong>Центрирование:</strong> Вертикальное и горизонтальное центрирование любого элемента внутри родителя.</li>
+        <li><strong>Навигационная панель:</strong> Создание адаптивной шапки (header), где логотип и элементы меню равномерно распределены.</li>
+        <li><strong>Адаптивные карточки:</strong> Создание галерей или блоков контента, которые автоматически перестраиваются в один ряд на больших экранах и в колонку на маленьких (как в предыдущем дополнительном задании).</li>
+    </ul>
+
+</body>
+</html>
