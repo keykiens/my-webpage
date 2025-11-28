@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Контрольные вопросы по CSS Grid</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+      margin: 0;
+      padding: 20px;
+      line-height: 1.6;
+    }
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+    .question {
+      background: #fff;
+      border-radius: 8px;
+      padding: 15px;
+      margin-bottom: 15px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    .question h2 {
+      margin-top: 0;
+      color: #4D96FF;
+    }
+    a {
+      color: #FF6B6B;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <h1>Контрольные вопросы по CSS Grid</h1>
+
+  <div class="question">
+    <h2>1. Какими свойствами задаются количество и ширина столбцов в Grid‑контейнере?</h2>
+    <p>Используются свойства <code>grid-template-columns</code> и <code>grid-template-rows</code>. 
+    Например: <code>grid-template-columns: repeat(3, 1fr);</code>.</p>
+  </div>
+
+  <div class="question">
+    <h2>2. Какой метод можно использовать, чтобы равномерно распределить доступное пространство?</h2>
+    <p>Для этого применяют функцию <code>fr</code> (fractional unit). Она делит пространство пропорционально. 
+    Например: <code>grid-template-columns: 1fr 1fr 1fr;</code>.</p>
+  </div>
+
+  <div class="question">
+    <h2>3. Какие функции CSS Grid позволяют автоматически подстраивать количество колонок или строк?</h2>
+    <p>Функции <code>auto-fill</code> и <code>auto-fit</code> в сочетании с <code>minmax()</code>. 
+    Например: <code>grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));</code>.</p>
+  </div>
+
+  <div class="question">
+    <h2>4. Каким свойством можно задать промежутки между элементами Grid?</h2>
+    <p>Используется свойство <code>gap</code> (или отдельно <code>row-gap</code> и <code>column-gap</code>).</p>
+  </div>
+
+  <div class="question">
+    <h2>5. Как разместить элемент в нескольких строках или столбцах Grid?</h2>
+    <p>Применяются свойства <code>grid-column</code> и <code>grid-row</code>. 
+    Например: <code>grid-column: 1 / 3;</code> — элемент займёт два столбца.</p>
+  </div>
+
+  <div class="question">
+    <h2>6. Красивое применение Grid</h2>
+    <p>  <a href="https://www.ramotion.com/blog/website-grid-design/" target="_blank">GridExamples</a>. 
+    На этом сайте я нашла красивое применение CSS Grid.</p>
+  </div>
+</body>
+</html>
