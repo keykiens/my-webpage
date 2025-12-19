@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    <link rel="stylesheet" href="osnov8.css">
+</head>
+<body>
+
+<!-- Бургер-меню -->
+<div class="menu">
+    <input type="checkbox" id="burger-checkbox" class="burger-checkbox">
+    <label for="burger-checkbox" class="burger"></label>
+
+    <ul class="menu-list">
+        <li><a href="#home" class="menu-item">Главная</a></li>
+        <li><a href="#contacts" class="menu-item">Контакты</a></li>
+        <li><a href="#services" class="menu-item">Услуги</a></li>
+    </ul>
+</div>
+
+<!-- Главная секция -->
+<section id="home">
+    <div class="container">
+        <h1>ToDo List</h1>
+
+        <div class="input-section">
+            <input type="text" id="taskInput" placeholder="Введите задачу">
+            <button id="addTaskBtn">Добавить</button>
+        </div>
+
+        <div class="filter-section">
+            <button id="filterAll" class="filter-btn active">Все</button>
+            <button id="filterCompleted" class="filter-btn">Выполненные</button>
+            <button id="filterUncompleted" class="filter-btn">Невыполненные</button>
+        </div>
+
+        <ul id="taskList"></ul>
+
+        <div class="link-block">
+            <a href="questions.html" class="questions-link">
+                Перейти к контрольным вопросам
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Контакты -->
+<section id="contacts" class="section">
+    <h2>Контакты</h2>
+    <p>Email:Keykiens@mail.com</p>
+</section>
+
+<!-- Услуги -->
+<section id="services" class="section">
+    <h2>Услуги</h2>
+    <p>Помощь в изучении DOM, JavaScript и веб-разработки.</p>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
