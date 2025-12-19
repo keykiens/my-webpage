@@ -1,5 +1,0 @@
-status-completed - работа выполнена
-
-status-in-progress - в процессе
-
-status-planned - запланировано
