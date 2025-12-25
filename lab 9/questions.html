@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Контрольные вопросы — Лабораторная №9</title>
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; }
+        h1 { margin-bottom: 20px; }
+        .question { font-weight: bold; margin-top: 15px; }
+        .answer { margin-left: 15px; }
+    </style>
+</head>
+<body>
+    <h1>Контрольные вопросы</h1>
+
+    <div class="question">1. Что такое "асинхронность" в JavaScript, и как она отличается от синхронного выполнения кода?</div>
+    <div class="answer">
+        Асинхронность — это возможность выполнять операции без блокировки основного потока. 
+        При синхронном выполнении каждая операция ждёт завершения предыдущей, а при асинхронном — 
+        задачи могут выполняться параллельно, и результат обрабатывается позже через колбэки, промисы или async/await.
+    </div>
+
+    <div class="question">2. Какой объект в JavaScript используется для работы с асинхронными операциями? Объясните его основные состояния.</div>
+    <div class="answer">
+        Основной объект — <b>Promise</b>. Он может находиться в трёх состояниях:
+        <ul>
+            <li><b>pending</b> — ожидание выполнения;</li>
+            <li><b>fulfilled</b> — успешно выполнено;</li>
+            <li><b>rejected</b> — завершено с ошибкой.</li>
+        </ul>
+    </div>
+
+    <div class="question">3. Чем отличаются async/await от использования метода .then() у промисов? Какие преимущества они дают?</div>
+    <div class="answer">
+        <b>async/await</b> позволяют писать асинхронный код в стиле синхронного, делая его более читаемым. 
+        Метод <code>.then()</code> требует вложенных функций и может приводить к «лесенке» кода. 
+        Преимущество async/await — простота, наглядность и удобная обработка ошибок через try/catch.
+    </div>
+
+    <div class="question">4. Как обрабатываются ошибки в асинхронных функциях с использованием async/await? Приведите пример.</div>
+    <div class="answer">
+        Ошибки обрабатываются через <code>try...catch</code>.  
+        Пример:
+        <pre>
+async function getData() {
+    try {
+        const response = await fetch("https://example.com/api");
+        const data = await response.json();
+        console.log(data);
+    } catch (error) {
+        console.error("Ошибка:", error);
+    }
+}
+        </pre>
+    </div>
+
+    <div class="question">5. Что такое "Event Loop" в JavaScript, и как он связан с выполнением асинхронного кода?</div>
+    <div class="answer">
+        <b>Event Loop</b> — это механизм, который управляет выполнением кода, обработкой событий и очередью задач. 
+        Он проверяет стек вызовов и очередь задач, выполняя синхронный код сразу, а асинхронные колбэки — 
+        когда основной поток освобождается. Благодаря Event Loop JavaScript может быть однопоточным, но при этом 
+        эффективно работать с асинхронными операциями.
+    </div>
+</body>
+</html>
